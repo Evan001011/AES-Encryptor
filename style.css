@@ -1,0 +1,137 @@
+:root {
+    color-scheme: dark;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0d0d0d;
+    color: #eee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.7rem;
+    text-align: center;
+    margin: 0 0 6px 0;
+    flex-shrink: 0;
+}
+
+.container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 370px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+textarea,
+input {
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    width: 100%;
+    outline-offset: 2px;
+    outline-color: #00cc99;
+    max-height: 72px;
+    overflow-y: auto;
+}
+
+textarea {
+    resize: none;
+    height: 72px;
+    line-height: 1.2;
+}
+
+input {
+    height: 38px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 370px;
+    width: 100%;
+}
+
+button {
+    background-color: #00cc99;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #00b386;
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: default;
+}
+
+#loadingBar {
+    height: 6px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+    max-width: 370px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#loadingProgress {
+    height: 100%;
+    width: 0%;
+    background: #00cc99;
+    transition: width 0.3s ease;
+}
+
+#output {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    color: #0f0;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    max-width: 370px;
+    width: 100%;
+    flex-shrink: 1;
+    overflow-y: auto;
+    min-height: 48px;
+    max-height: 120px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: text;
+    box-sizing: border-box;
+}
