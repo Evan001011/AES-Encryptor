@@ -37,6 +37,7 @@ h1 {
     max-width: 370px;
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
+    min-height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
 }
