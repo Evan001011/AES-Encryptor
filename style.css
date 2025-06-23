@@ -16,7 +16,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 70vh;
     padding: 8px 12px;
     box-sizing: border-box;
 }
