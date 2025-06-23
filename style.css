@@ -6,7 +6,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 70vh;
+    height: var(--vh, 100vh);
+    width: 100vw;
     background-color: #0d0d0d;
     color: #eee;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -16,7 +17,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 100%;
     padding: 8px 12px;
     box-sizing: border-box;
 }
