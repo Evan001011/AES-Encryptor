@@ -2,57 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>AES Encryptor</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AES Encryptor</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>🔐 AES Encryptor</h1>
-    <div class="container">
-        <textarea id="message" placeholder="Enter message..."></textarea>
-        <input type="text" id="firstName" placeholder="First Name" autocomplete="name" />
-        <input type="text" id="lastName" placeholder="Last Name" autocomplete="family-name" />
+  <h1>🔐 AES Encryptor</h1>
+  <div class="container">
+    <textarea id="message" placeholder="Enter message..."></textarea>
+    <input type="text" id="firstName" placeholder="First Name" autocomplete="name" />
+    <input type="text" id="lastName" placeholder="Last Name" autocomplete="family-name" />
 
-        <div class="button-group">
-            <button id="encryptBtn" onclick="encrypt()">Encrypt</button>
-            <button id="decryptBtn" onclick="decrypt()">Decrypt</button>
-        </div>
-
-        <div id="loadingBar" style="display:none;">
-            <div id="loadingProgress"></div>
-        </div>
-
-        <div id="output" aria-live="polite"></div>
-
-        <button onclick="copyOutput()">📋 Copy Output</button>
+    <div class="button-group">
+      <button id="encryptBtn" onclick="encrypt()">Encrypt</button>
+      <button id="decryptBtn" onclick="decrypt()">Decrypt</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="loadingBar" style="display:none;">
+      <div id="loadingProgress"></div>
+    </div>
 
-    <!-- Mobile viewport height fix -->
-    <script>
-        function setViewportHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
+    <div id="output" aria-live="polite"></div>
 
-        window.addEventListener('resize', setViewportHeight);
-        window.addEventListener('orientationchange', setViewportHeight);
-        window.addEventListener('focusin', setViewportHeight);
-        window.addEventListener('focusout', () => {
-            setTimeout(() => {
-                setViewportHeight();
-                window.scrollTo(0, 0);
-            }, 100);
-        });
+    <button onclick="copyOutput()">📋 Copy Output</button>
+  </div>
 
-        window.addEventListener('DOMContentLoaded', () => {
-            setViewportHeight();
-        });
-    </script>
+  <script src="script.js"></script>
+  <script>
+    function setViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', setViewportHeight);
+    window.addEventListener('orientationchange', setViewportHeight);
+    window.addEventListener('focusin', setViewportHeight);
+    window.addEventListener('focusout', () => {
+      setTimeout(() => {
+        setViewportHeight();
+        window.scrollTo(0, 0);
+      }, 100);
+    });
+
+    window.addEventListener('DOMContentLoaded', setViewportHeight);
+  </script>
 </body>
 
 </html>
