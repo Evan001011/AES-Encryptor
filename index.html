@@ -29,7 +29,10 @@
 
         <button onclick="copyOutput()">📋 Copy Output</button>
     </div>
+
     <script src="script.js"></script>
+
+    <!-- Mobile viewport height fix -->
     <script>
         function setViewportHeight() {
             const vh = window.innerHeight * 0.01;
@@ -46,7 +49,9 @@
             }, 100);
         });
 
-        setViewportHeight();
+        window.addEventListener('DOMContentLoaded', () => {
+            setViewportHeight();
+        });
     </script>
 </body>
 
