@@ -11,7 +11,7 @@ body {
   background-color: #0d0d0d;
   color: #eee;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow: hidden; /* Absolutely no scrolling */
+  overflow: hidden; /* No page scrollbars */
 }
 
 body {
@@ -27,9 +27,9 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2.7rem;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px; /* Extra top space */
   margin-bottom: 12px;
   flex-shrink: 0;
 }
@@ -64,10 +64,63 @@ input:focus {
   outline-color: #00cc99;
 }
 
-textarea {
+/* Scrollable message textarea */
+textarea#message {
   resize: none;
   height: 72px;
   line-height: 1.2;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: #00cc99 #1e1e1e;
+}
+
+/* WebKit custom scrollbar for textarea */
+textarea#message::-webkit-scrollbar {
+  width: 8px;
+}
+textarea#message::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+textarea#message::-webkit-scrollbar-thumb {
+  background-color: #00cc99;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+/* Scrollable output box */
+#output {
+  background: #1e1e1e;
+  border-radius: 10px;
+  color: #0f0;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  width: 100%;
+  min-height: 48px;
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #00cc99 #1e1e1e;
+}
+
+/* WebKit custom scrollbar for output */
+#output::-webkit-scrollbar {
+  width: 8px;
+}
+#output::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+#output::-webkit-scrollbar-thumb {
+  background-color: #00cc99;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
 }
 
 input {
@@ -119,21 +172,4 @@ button:disabled {
   width: 0%;
   background: #00cc99;
   transition: width 0.3s ease;
-}
-
-#output {
-  background: #1e1e1e;
-  border-radius: 10px;
-  color: #0f0;
-  font-size: 0.9rem;
-  padding: 8px 10px;
-  padding-bottom: 10px;
-  width: 100%;
-  min-height: 48px;
-  max-height: 120px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
-  user-select: text;
-  box-sizing: border-box;
 }
