@@ -11,7 +11,7 @@ body {
   background-color: #0d0d0d;
   color: #eee;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow: hidden; /* No page scrollbars */
+  overflow: hidden; /* Disable page scrollbars completely */
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 h1 {
   font-size: 2.7rem;
   text-align: center;
-  margin-top: 40px; /* Extra top space */
+  margin-top: 40px; /* Extra space above */
   margin-bottom: 12px;
   flex-shrink: 0;
 }
@@ -44,6 +44,7 @@ h1 {
   box-sizing: border-box;
 }
 
+/* Common input styles */
 textarea,
 input {
   font-size: 1rem;
@@ -64,10 +65,12 @@ input:focus {
   outline-color: #00cc99;
 }
 
-/* Scrollable message textarea */
+/* Fixed-height, scrollable message box */
 textarea#message {
   resize: none;
   height: 72px;
+  max-height: 72px;
+  min-height: 72px;
   line-height: 1.2;
   overflow-y: auto;
   white-space: pre-wrap;
@@ -76,7 +79,7 @@ textarea#message {
   scrollbar-color: #00cc99 #1e1e1e;
 }
 
-/* WebKit custom scrollbar for textarea */
+/* Custom scrollbar for message box */
 textarea#message::-webkit-scrollbar {
   width: 8px;
 }
@@ -85,39 +88,6 @@ textarea#message::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 textarea#message::-webkit-scrollbar-thumb {
-  background-color: #00cc99;
-  border-radius: 10px;
-  border: 2px solid #1e1e1e;
-}
-
-/* Scrollable output box */
-#output {
-  background: #1e1e1e;
-  border-radius: 10px;
-  color: #0f0;
-  font-size: 0.9rem;
-  padding: 8px 10px;
-  width: 100%;
-  min-height: 48px;
-  max-height: 120px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
-  user-select: text;
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #00cc99 #1e1e1e;
-}
-
-/* WebKit custom scrollbar for output */
-#output::-webkit-scrollbar {
-  width: 8px;
-}
-#output::-webkit-scrollbar-track {
-  background: #1e1e1e;
-  border-radius: 10px;
-}
-#output::-webkit-scrollbar-thumb {
   background-color: #00cc99;
   border-radius: 10px;
   border: 2px solid #1e1e1e;
@@ -172,4 +142,37 @@ button:disabled {
   width: 0%;
   background: #00cc99;
   transition: width 0.3s ease;
+}
+
+/* Fixed-size, scrollable output box */
+#output {
+  background: #1e1e1e;
+  border-radius: 10px;
+  color: #0f0;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  width: 100%;
+  min-height: 48px;
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #00cc99 #1e1e1e;
+}
+
+/* Custom scrollbar for output box */
+#output::-webkit-scrollbar {
+  width: 8px;
+}
+#output::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+#output::-webkit-scrollbar-thumb {
+  background-color: #00cc99;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
 }
