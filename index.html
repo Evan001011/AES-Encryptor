@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <h1>🔐 AES Encryptor</h1>
     <div class="container">
         <textarea id="message" placeholder="Enter message..."></textarea>
@@ -26,12 +25,29 @@
             <div id="loadingProgress"></div>
         </div>
 
-
         <div id="output" aria-live="polite"></div>
 
         <button onclick="copyOutput()">📋 Copy Output</button>
     </div>
     <script src="script.js"></script>
+    <script>
+        function setViewportHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+        window.addEventListener('focusin', setViewportHeight);
+        window.addEventListener('focusout', () => {
+            setTimeout(() => {
+                setViewportHeight();
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+
+        setViewportHeight();
+    </script>
 </body>
 
 </html>
